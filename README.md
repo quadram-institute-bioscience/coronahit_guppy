@@ -3,12 +3,12 @@
 In order to demultiplex coronaHiT data properly with Guppy, there are two files that need to be customised in the Guppy data's folder, for instance on Ubuntu `/opt/ont/guppy/data/barcoding` ; on Windows `C:\Program Files\Oxford Nanopore\ont-guppy-cpu\data` 
 
 1. Make a copy of **barcodes_masked.fasta**  to **barcodes_coronahit_masked.fasta**
-   Update the arrangement template starting for **BC_1st** and **BC_2nd** like below
+   Replace the arrangement template starting for **BC_1st** and **BC_2nd** like below
    ```
-   >BC_1st
-   GGTGCTGNNNNNNNNNNNNNNNNNNNNNNNNTTAACCT
-   >BC_2nd
-   GGTGCTGNNNNNNNNNNNNNNNNNNNNNNNNTTAACCT
+   >CHIT_1st
+   GGTGCTGNNNNNNNNNNNNNNNNNNNNNNNNTTAACCTGTCTCGTGGGCTCGG
+   >CHIT_2nd
+   GGTGCTGNNNNNNNNNNNNNNNNNNNNNNNNTTAACCTTCGTCGGCAGCGTC
     ```
 
 2. Create **barcode_arrs_pcr96_coronahit.cfg** with the following configuration
@@ -24,8 +24,8 @@ In order to demultiplex coronaHiT data properly with Guppy, there are two files 
    kit = BC
    normalised_id = barcode%02i
    scoring_function = MAX
-   mask1 = BC_1st
-   mask2 = BC_2nd
+   mask1 = CHIT_1st
+   mask2 = CHIT_2nd
    barcode1 = BC%02i
    barcode2 = BC%02i
     ```
