@@ -2,7 +2,7 @@
 
 In order to demultiplex coronaHiT data properly with Guppy, there are two files that need to be customised in the Guppy data's folder, for instance on Ubuntu `/opt/ont/guppy/data/barcoding` ; on Windows `C:\Program Files\Oxford Nanopore\ont-guppy-cpu\data` 
 
-1. Make a copy of **barcodes_masked.fasta**  to **barcodes_coronahit_masked.fasta**
+1. Make a copy of **barcodes_masked.fasta**  to **barcodes_coronahit_masked.fasta**.
    Replace the arrangement template starting for **BC_1st** and **BC_2nd** like below
    ```
    >CHIT_1st
